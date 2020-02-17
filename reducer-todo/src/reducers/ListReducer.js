@@ -7,8 +7,30 @@ const initialState = {
 }
 
 
- const itemReducer = (state, action) => {
-    return
-}
+ export const itemReducer = (state, action) => {
+     switch (action.type) {
+         case 'ADD_TODO':
+             return {
+                 ...state,
+                item: action.payload,
+                id: Date.now(),
+                completed: false
+            };
+         case 'TOGGLE_COMPLETE':
+             return {
+                 ...state,
+                 complete: !state.complete
+             };
+         case 'CLEAR_COMPLETE':
+             return {
+                 ...state
+             };       
+
+         default:
+             return state;   
+
+     }
+   
+};
 
 
