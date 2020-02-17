@@ -6,9 +6,8 @@ const initialState = {
     id: 3892987589
 }
 
-
- export const itemReducer = (state, action) => {
-     switch (action.type) {
+export const itemReducer = (state, action) => {
+    switch (action.type) {
          case 'ADD_TODO':
              return {
                  ...state,
@@ -19,18 +18,16 @@ const initialState = {
          case 'TOGGLE_COMPLETE':
              return {
                  ...state,
-                 complete: !state.complete
+                 completed: !state.complete
              };
          case 'CLEAR_COMPLETE':
              return {
-                 ...state
+                 ...state,
+                 completed: true
              };       
-
          default:
              return state;   
-
-     }
-   
+    }
 };
 
 
