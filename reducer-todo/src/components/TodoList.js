@@ -9,7 +9,10 @@ const TodoList = props => {
       {props.toDo.map(item => (
         <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
       ))}
-      <button className="clear-btn" onClick={() => dispatchEvent({type: TOGGLE_COMPLETE})}>
+      <button className="clear-btn" onClick={() => {
+          dispatch({type: CLEAR_COMPLETE});
+        }}
+      >
         Remove Completed Items
       </button>
     </div>
