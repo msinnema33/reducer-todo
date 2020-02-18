@@ -18,6 +18,7 @@ const Todo = () => {
             value={newItemText}
             onChange={handleChanges}
           />
+
           <button
             onClick={() => {
                dispatch({ type: 'ADD_TODO', payload: newItemText });
@@ -25,6 +26,28 @@ const Todo = () => {
           >
             Update To Do list
           </button>
+
+          <button className="clear-btn" 
+            onClick={() => {
+                 dispatch({type: 'CLEAR_COMPLETE'});
+            }}
+          >
+        Remove Completed Items
+      </button>  
+      <div className="todo-list">
+    <ul>
+      {state.map(item => (
+        <li onClick={() => dispatch({type: 'TOGGLE_COMPLETE', payload: item.id})}
+         >
+             {item.item}
+
+         </li>
+      ))}
+      
+    </ul>    
+  
+    </div>
+
         </div>
     );
 }
