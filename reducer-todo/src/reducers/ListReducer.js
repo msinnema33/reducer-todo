@@ -11,8 +11,8 @@ export const initialState = [{
 export const itemReducer = (state, action) => {
     switch (action.type) {
          case 'ADD_TODO':
-             console.log(state);
-             console.log(action);
+            //  console.log(state);
+            //  console.log(action);
              return [
                  ...state,
                 {item: action.payload,
@@ -21,8 +21,8 @@ export const itemReducer = (state, action) => {
              ];
             
          case 'TOGGLE_COMPLETE':
-            console.log(state);
-            console.log(action);
+            // console.log(state);
+            // console.log(action);
              return (
                  state.map(item=> {
                      if(item.id===action.payload)
@@ -32,8 +32,8 @@ export const itemReducer = (state, action) => {
                 }));
 
          case 'CLEAR_COMPLETE':
-            console.log(state);
-            console.log(action);
+            // console.log(state);
+            // console.log(action);
              return( 
                  state.filter(item=> !item.completed)
                  );
