@@ -29,17 +29,15 @@ export const itemReducer = (state, action) => {
                         return{...item, completed: !item.completed};
                      else
                          return{...item}
-                     
-                        
-                 }))
+                }));
+
          case 'CLEAR_COMPLETE':
             console.log(state);
             console.log(action);
-             return (
-                 state.filter(item)
-                 ...state,
-                 completed: true
-             );       
+             return( 
+                 state.filter(item=> !item.completed)
+                 );
+
          default:
              return state;   
     }

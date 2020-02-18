@@ -35,20 +35,16 @@ const Todo = () => {
         Remove Completed Items
       </button>  
       <div className="todo-list">
-    <ul>
-      {state.map(item => (
-        <li onClick={() => dispatch({type: 'TOGGLE_COMPLETE', payload: item.id})}
-         >
-             {item.item}
-
-         </li>
-      ))}
-      
-    </ul>    
-  
-    </div>
-
-        </div>
+        <ul>
+        {state.map(item => (
+            <li onClick={() => dispatch({type: 'TOGGLE_COMPLETE', payload: item.id})}
+            >
+                {item.item}
+            </li>
+        ))}
+        </ul>    
+      </div>
+      </div>
     );
 }
 
