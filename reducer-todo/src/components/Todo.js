@@ -37,7 +37,7 @@ const Todo = () => {
       <div className="todo-list">
         <ul>
         {state.map(item => (
-            <li onClick={() => dispatch({type: 'TOGGLE_COMPLETE', payload: item.id})}
+            <li className={state.completed ? 'completed' : ''} onClick={() => dispatch({type: 'TOGGLE_COMPLETE', payload: item.id})}
             >
                 {item.item}
             </li>
