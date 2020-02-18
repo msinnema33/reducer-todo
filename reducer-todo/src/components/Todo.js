@@ -19,7 +19,7 @@ const Todo = () => {
             onChange={handleChanges}
           />
 
-          <button
+          <button className='add-btn'
             onClick={() => {
                dispatch({ type: 'ADD_TODO', payload: newItemText });
             }}
